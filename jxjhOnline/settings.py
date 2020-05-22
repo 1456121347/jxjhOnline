@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.users.apps.UsersConfig',
+    # 'users.apps.UsersConfig',
     'xadmin',
     'crispy_forms',
     'reversion',
@@ -45,13 +45,16 @@ INSTALLED_APPS = [
     'apps.organization.apps.OrganizationConfig',
     'apps.operation.apps.OperationConfig',
     'apps.users.apps.UsersConfig',
+
 ]
+
+AUTH_USER_MODEL = 'users.UserProfile'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -134,5 +137,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR, '../../static'),
 )
