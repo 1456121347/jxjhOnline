@@ -20,5 +20,5 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = UserProfileSerializers
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly,IsOwnerReadOnly]
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(owner=self.request.user)

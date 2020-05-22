@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
 ]
-
+# 使用自己的UserProfile，而不是系统的
 AUTH_USER_MODEL = 'users.UserProfile'
 
 MIDDLEWARE = [
@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'jxjhOnline.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# from pymysql import install_as_MySQLdb
-# install_as_MySQLdb()
+from pymysql import install_as_MySQLdb
+install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -121,21 +121,35 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
+# 设置语言为中文
 LANGUAGE_CODE = 'zh-hans'
-
+# 时区为上海
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(
-    os.path.join(BASE_DIR, '../../static'),
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static'),
 )
+
+# 设置上传文件的路径
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')   #指定根目录
+
+# 配置邮箱
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "1456121347@qq.com"
+# EMAIL_HOST_PASSWORD = "gqalkhndjepjiied"
+EMAIL_HOST_PASSWORD = "ubssnrmkuezchgge"
+EMAIL_USE_TLS = True
+EMAIL_FROM = "1456121347@qq.com"
