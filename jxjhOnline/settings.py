@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -37,14 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'users.apps.UsersConfig',
     'xadmin',
     'crispy_forms',
     'reversion',
-    'apps.course.apps.CourseConfig',
-    'apps.organization.apps.OrganizationConfig',
-    'apps.operation.apps.OperationConfig',
-    'apps.users.apps.UsersConfig',
+    'course.apps.CourseConfig',
+    'organization.apps.OrganizationConfig',
+    'operation.apps.OperationConfig',
+    'users.apps.UsersConfig',
+    'rest_framework',
 
 ]
 

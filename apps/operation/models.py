@@ -3,8 +3,8 @@ from datetime import datetime
 # 引入我们CourseComments所需要的外键models
 from django.db import models
 
-from apps.users.models import UserProfile
-from apps.course.models import Course
+from users.models import UserProfile
+from course.models import Course
 
 # 用户我要学习表单
 class UserAsk(models.Model):

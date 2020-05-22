@@ -8,9 +8,9 @@ class BaseSetting(object):
 
 class GlobalSettings(object):
     site_title = '即学即会IT课后台管理页面'
-    site_footer = 'Powered By Bruce - 2020'
+    site_footer = 'Powered By 席栋祥 - 2020'
     # 收起菜单
-    # menu_style = "accordion"
+    menu_style = "accordion"
 
 xadmin.site.register(views.BaseAdminView,BaseSetting)
 xadmin.site.register(views.CommAdminView,GlobalSettings)
